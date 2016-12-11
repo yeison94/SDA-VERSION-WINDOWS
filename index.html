@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="es">
+	<head>
+	<title>Página de inicio</title>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="FrontEnd/Lib/bootstrap-3.3.6/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="FrontEnd/stylesheets/style.css">
+
+	</head>
+	<body data-ng-app="app">
+		<!--[if lt IE 8]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<!-- Header -->
+		<div class="container-fluid" >
+			<div class="row FondoVerde letrablanca">
+				<div class="col-lg-3 col-xs-12"><img src="FrontEnd/Image/escudo.png" alt="Escudo Colegio" class="grande"></div>
+				<div class="col-lg-9 col-xs-12">
+				    <h1 class = "text-center Grande">Bienvenidos</h1>
+				    <h2 class = "text-center ">Administrador de archivos de la Institución Educativa Escuela Normal Superior de María</h2>
+				</div>
+			</div>
+
+			<!-- Navegation -->
+			<div class="row">
+				<div class="col-lg-13">
+					<nav class="navbar navbar-inverse">
+						<div class="container-fluid">
+							<ul class="nav navbar-nav">
+							    <li><a href="#/home">Pagina Principal</a></li>
+								<li><a href="#/interfaceEstudiante">Estudiante</a></li>
+								<li><a href="#/loginProfesor">Profesor</a></li>
+								<li><a href="#/loginAdministrador">Administrador</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+
+			<!-- Espacio donde se cargaran las vistas -->
+			<div class="row">
+			    <div data-ng-view></div>
+			</div>
+		</div>
+
+		<!-- <script src="BackEnd/bower_components/angular/angular.min.js"></script>
+		<script src="BackEnd/bower_components/angular-route/angular-route.min.js"></script> -->
+		<script  src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src = "FrontEnd/Lib/angular.min.js" ></script>
+		<script src = "FrontEnd/Lib/angular-route.js" ></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.js"></script> -->
+		<script src="app.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
+	</body>
+</html>

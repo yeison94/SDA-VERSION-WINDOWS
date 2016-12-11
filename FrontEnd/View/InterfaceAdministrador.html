@@ -1,0 +1,58 @@
+<div data-ng-controller= ControllerInterfaceAdmin>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <table class="table">
+        <tr>
+          <th><b>NOMBRE PROFESOR</b></th>
+          <th><b>ASIGNATURA</b></th>
+          <th><b>CONTRASEÑA</b></th>
+        </tr>
+        <tr data-ng-repeat="x in oferta">
+          <td>{{x.nombre}}</td>
+          <td>{{x.asignatura}}</td>
+          <td>{{x.contra}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-lg-offset-2">
+      <div class="text-center"><h4>Nombre profesor:</h4></div>
+      <br>
+      <input type="text" class="form-control" data-ng-model="nombreProfesor">
+    </div>
+    <div class="col-lg-3">
+      <div class="text-center"><h4>Asignatura a dictar:</h4></div>
+      <br>
+      <input type="text" class="form-control" data-ng-model="asignatura">
+    </div>
+    <div class="col-lg-2">
+      <div class="text-center"><h4>Contraseña:</h4></div>
+      <br>
+      <input type="text" class="form-control" data-ng-model="contras">
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <div class="alert alert-info" role="alert" >
+        <p>
+          -Para añadir profesores debe llenar los 3 campos, no use mayusculas ni tildes<br>
+          -Para eliminar solo  llene el campo del nombre y asignatura copiando los datos <br>
+          de forma exacta a como aparecen en el cuadro.<br>
+          NOTA: Los profesor se logean con el nombre y la contraseña con el que fueron registrados por el administrador
+        </p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-lg-3 col-lg-offset-5">
+        <button type="button" class="btn btn-primary" data-ng-click="agregarProfesor()">Añadir</button>
+        <button type="button" class="btn btn-danger" data-ng-click="eliminarProfesor()">Eliminar</button>
+        <button type="button" class="btn btn-success" data-ng-click="cerrarSesion()">Cerrar Sesion</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+img.pequeña{
+  width: 50px; height: 50px;
+}
+img.mediana{
+  width: 100px; height: 100px;
+}
+img.grande{
+  width: 200px; height: 200px;
+}
+
+div.FondoVerde {
+	background-color: #00913f;
+}
+
+.letrablanca{
+	color: #FFFFFF;
+}
+
+h1.Grande{
+	font-size: 3.5em;
+}
+
+span.letranegra{
+	color: #000000;
+}
+
+span.Iconos{
+	font-size: 50px;
+}
+
+
