@@ -20,7 +20,7 @@
 
  }
 
- if ($_SERVER['REQUEST_METHOD'] == 'POST'  && empty($_POST)){
+ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
    $operacion = "";
 
@@ -43,7 +43,7 @@
         //Para subir el archivo a la carpeta
         $target_dir = "../Archivos/'$curso'/Alumnos/";
 
-        print_r($_FILES);
+        //print_r($_FILES);
         $target_file = $target_dir . basename($_FILES["file"]["name"]);
         if(!isset($name) || $name=="undefined"){
            $name = $_FILES["file"]["name"];
@@ -65,17 +65,15 @@
 
         if($sql3 == true){
 
-          $result[] = array('BD' => true);
+          $result[] = array('BD_modificada' => true);
 
         }else{
 
-          $result[] = array('BD' => false);
+          $result[] = array('BD_modificada' => false);
 
         }
 
         $mysqli->close();
-
-       $result[] = array('Nombre archivo' => $name_file);
 
          $result2 = json_encode($result);
          echo $result2;

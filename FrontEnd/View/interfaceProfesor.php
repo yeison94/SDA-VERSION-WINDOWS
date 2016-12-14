@@ -12,6 +12,9 @@
           </tr>
         </table>
         <br>
+        <button type="button" class="btn btn-success btn-lg btn-block" data-ng-click="recargar()">Cargar actualizaciones</button>
+        <br>
+        <br>
         <h4><p class="text-center">SUBIR ARCHIVOS</p></h4>
         <div class="form-group">
             <br>

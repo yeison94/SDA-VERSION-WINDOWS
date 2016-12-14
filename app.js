@@ -46,7 +46,7 @@ var app = angular.module('app', ['ngRoute']);
     }
    };
 }]);
-    app.service('fileUpload', ['$http', function ($http) {
+    app.service('fileUpload', ['$http', function ($http,$route, $location) {
         this.uploadFileToUrl = function(file, uploadUrl, name, curs,opera){
              var fd = new FormData();
              fd.append('file', file);
@@ -58,8 +58,8 @@ var app = angular.module('app', ['ngRoute']);
                  headers: {'Content-Type': undefined,'Process-Data': false}
              })
              .then(function(res){
-                console.log("res.data.Mover_Archivo", res.data);
-                if (res.data.Mover_Archivo == true && res.data.BD_modificada == true) {
+                console.log("Resultado subir archivo",res.data);
+                if (res.data[1].BD_modificada == true && res.data[0].Mover_Archivo == true) {
                   window.alert("ARCHIVO SUBIDO CON EXITO");
                 }else{
                     window.alert("PROBLEMAS AL SUBIR EL ARCHIVO" + res.data[1]);
@@ -282,10 +282,12 @@ var app = angular.module('app', ['ngRoute']);
        var curso = ServicioDatos.datosCompatidos;
        var opera = "subirArchivo";
        fileUpload.uploadFileToUrl(file, uploadUrl, text,curso,opera );
-
-       $location.path('/interfaceProfesor');
-       $route.reload();
   };
+
+  $scope.recargar = function(){
+    $location.path('/interfaceProfesor');
+    $route.reload();
+  }
 
   $scope.cerrarSesion = function(){
 
