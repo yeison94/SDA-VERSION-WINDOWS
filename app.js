@@ -58,7 +58,7 @@ var app = angular.module('app', ['ngRoute']);
                  headers: {'Content-Type': undefined,'Process-Data': false}
              })
              .then(function(res){
-                console.log("Success", res.data);
+                console.log("res.data.Mover_Archivo", res.data);
                 if (res.data.Mover_Archivo == true && res.data.BD_modificada == true) {
                   window.alert("ARCHIVO SUBIDO CON EXITO");
                 }else{
@@ -195,7 +195,7 @@ var app = angular.module('app', ['ngRoute']);
 
         $http.post('BackEnd/LoginAdmin/loginAdmin.php', {operacion : "borrar",nam : $scope.nombreProfesor , Asignatura : $scope.asignatura })
               .then(function(res){
-                console.log('Success', res.data);
+                console.log('Resultado de eliminar', res.data);
                   $scope.comprobar = res.data.Respuesta;
                   $scope.comprobar2 = false;
 

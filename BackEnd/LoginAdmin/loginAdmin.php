@@ -98,9 +98,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)){
 
 			}else{
 
-				$retorno= mysqli_query($mysqli, "DELETE FROM profesores WHERE name = '$nameProfesor_pos' and curso = '$asignatura_pos'");
+				$retorno  = mysqli_query($mysqli, "DELETE FROM profesores WHERE name = '$nameProfesor_pos' and curso = '$asignatura_pos'");
+				$retorno2 = mysqli_query($mysqli, "DELETE FROM archivos WHERE curso = '$asignatura_pos'");
 
-				if($retorno == true){
+				if($retorno == true && $retorno2 == true){
 
 					eliminarDir("../Archivos/'$asignatura_pos'");
 
@@ -111,6 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)){
 					$result = array('Respuesta' => false);
 
 				}
+
 				$mysqli->close();
 
 
