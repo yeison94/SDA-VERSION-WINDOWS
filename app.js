@@ -59,10 +59,10 @@ var app = angular.module('app', ['ngRoute']);
              })
              .then(function(res){
                 console.log("Resultado subir archivo",res.data);
-                if (res.data[1].BD_modificada == true && res.data[0].Mover_Archivo == true) {
+                if (((res.data[1].BD_modificada == true) || (res.data[1].Mover_Archivo == true))  && ((res.data[0].Mover_Archivo == true) || (res.data[0].BD_modificada == true))) {
                   window.alert("ARCHIVO SUBIDO CON EXITO");
                 }else{
-                    window.alert("PROBLEMAS AL SUBIR EL ARCHIVO" + res.data[1]);
+                    window.alert("PROBLEMAS AL SUBIR EL ARCHIVO, RECUERDE QUE DEBE PESAR MENOS DE 10 MB" + res.data[1]);
                 }
              });
          }

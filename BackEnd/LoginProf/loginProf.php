@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
      //Para subir el archivo a la carpeta
      $target_dir = "../Archivos/'$curso'/Subidos/";
 
-      print_r($_FILES);
+      //print_r($_FILES);
       $target_file = $target_dir . basename($_FILES["file"]["name"]);
       if(!isset($name) || $name=="undefined"){
          $name = $_FILES["file"]["name"];
